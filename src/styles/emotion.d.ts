@@ -27,6 +27,5 @@ declare module '@emotion/react' {
       labtop: string;
       mobile: string;
     };
-    flexCenter: css;
   }
 }

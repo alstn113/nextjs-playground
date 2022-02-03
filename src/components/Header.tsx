@@ -371,7 +371,7 @@ const Row = styled('div')`
     font-weight: 500;
   }
   .image-container {
-    padding: 40px;
+    padding: 20px;
   }
 
   ul {

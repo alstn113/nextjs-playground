@@ -46,18 +46,11 @@ const media = {
   mobile: `@media (max-width: 970px)`,
 };
 
-const flexCenter = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const theme = {
   color,
   font,
   borderRadius,
   media,
-  flexCenter,
 };
 
 export default theme;
