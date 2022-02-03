@@ -17,3 +17,5 @@ yarn add axios react-query recoil
 .env 설정
 
 public 하위에 assets만들기 그리고 next/image에서 image 경로 /assets/??? 불러오면 됨
+
+nextjs image에서 production일 경우 yarn add sharp를 하면 최적화에 좋음
