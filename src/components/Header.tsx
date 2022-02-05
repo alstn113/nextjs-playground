@@ -89,7 +89,7 @@ export default function Header() {
                   <header>TEST PAGE</header>
                   <ul>
                     <li>
-                      <Link href={`/`}>
+                      <Link href={`/product`}>
                         <a>Product</a>
                       </Link>
                     </li>
