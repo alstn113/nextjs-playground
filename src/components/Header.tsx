@@ -48,13 +48,13 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href={`/test`}>
-                  <a>Menu 2</a>
+                <Link href={`/auth/signup`}>
+                  <a>SIGN UP</a>
                 </Link>
               </li>
               <li>
-                <Link href={`/test`}>
-                  <a>Menu 3</a>
+                <Link href={`/auth/login`}>
+                  <a>LOGIN</a>
                 </Link>
               </li>
               <li>

@@ -24,3 +24,6 @@ nextjs image에서 production일 경우 yarn add sharp를 하면 최적화에 �
 npm info "eslint-config-airbnb@latest" peerDependencies로 뭐 설치 목록 확인
 yarn add -D eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-import
 yarn add -D eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+//react-hook-form
+yarn add react-hook-form yup @hookform/resolvers
