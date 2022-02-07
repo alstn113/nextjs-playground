@@ -1,22 +1,27 @@
 import { Global, css } from '@emotion/react';
-import emotionReset from 'emotion-reset';
-
+import reset from '@/styles/reset';
 function GlobalStyle() {
   return (
-    <Global
-      styles={css`
-        ${emotionReset}
-        *, *::before, *::after {
-          box-sizing: border-box;
-        }
-        button {
-          border: 0;
-          outline: 0;
-          background: none;
-          cursor: pointer;
-        }
-      `}
-    />
+    <>
+      <Global styles={reset} />
+      <Global
+        styles={css`
+          * {
+            box-sizing: border-box;
+          }
+          input {
+            outline: none;
+            border: none;
+          }
+          button {
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+          }
+        `}
+      />
+    </>
   );
 }
 

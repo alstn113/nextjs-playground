@@ -13,12 +13,12 @@ const color = {
 
 const font = {
   small: css`
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
   `,
   medium: css`
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
   `,
   large: css`
     font-size: 2rem;

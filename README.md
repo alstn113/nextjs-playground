@@ -7,7 +7,7 @@ components, pages, shared, store, styles, utils, api 넣기
 \_app.tsx \_documnet.tsx 관리,
 
 emotion 설정
-yarn add @emotion/react @emotion/styled emotion-reset
+yarn add @emotion/react @emotion/styled
 yarn add -D @emotion/babel-plugin
 .babelrc설정
 
