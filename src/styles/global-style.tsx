@@ -6,7 +6,9 @@ function GlobalStyle() {
       <Global styles={reset} />
       <Global
         styles={css`
-          * {
+          *,
+          *::before,
+          *::after {
             box-sizing: border-box;
           }
           input {

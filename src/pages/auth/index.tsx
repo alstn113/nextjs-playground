@@ -4,16 +4,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { flexCenter } from '@/shared/styled';
 
-interface AuthPageProps {
-  type: 'signin' | 'signup';
-}
-
 interface FormType {
   type: 'signin' | 'signup';
 }
 
-export default function AuthPage({ type = 'signup' }: AuthPageProps) {
-  const [FormType, setFormType] = useState<'signin' | 'signup'>(type);
+export default function AuthPage() {
+  const [FormType, setFormType] = useState<'signin' | 'signup'>('signin');
   return (
     <Wrapper type={FormType}>
       <Container>
