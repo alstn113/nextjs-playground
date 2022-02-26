@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
 // recoil
 import { RecoilRoot } from 'recoil';
@@ -12,7 +13,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/styles/theme';
 import GlobalStyle from '@/styles/global-style';
-import Head from 'next/head';
+
+import Header from '@/components/Header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -36,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
               <title>NEXT 공부</title>
             </Head>
+            <Header />
             <Component {...pageProps} />
           </ThemeProvider>
         </Hydrate>

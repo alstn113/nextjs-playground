@@ -43,7 +43,7 @@ export default function Header() {
             </button>
             <DropMenu isDropMenuOpen={isDropMenuOpen} className="drop-menu">
               <li>
-                <Link href={`/test`}>
+                <Link href={`/auth/test`}>
                   <a>Menu 1</a>
                 </Link>
               </li>
@@ -58,8 +58,8 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href={`/test`}>
-                  <a>Menu 4</a>
+                <Link href={`/auth/test`}>
+                  <a>test</a>
                 </Link>
               </li>
             </DropMenu>

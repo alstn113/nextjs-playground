@@ -47,10 +47,10 @@ export default function SignupPage() {
     <Wrapper>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>EAMIL</div>
-        <input {...register('email')} />
+        <Input {...register('email')} />
         <p>{errors.email?.message}</p>
         <div>PASSWORD</div>
-        <input {...register('password')} />
+        <Input {...register('password')} />
         <p>{errors.password?.message}</p>
         <button type="submit">
           {mutation.isLoading ? 'Loading...' : 'Submit'}
@@ -60,4 +60,13 @@ export default function SignupPage() {
   );
 }
 
-const Wrapper = styled('div')``;
+const Wrapper = styled('div')`
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Input = styled('input')`
+  border: 1px solid black;
+`;

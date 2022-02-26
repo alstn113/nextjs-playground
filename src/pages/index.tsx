@@ -1,12 +1,5 @@
-import Header from '@/components/Header';
-import withAuth from '@/HOC/withAuth';
-
 function Home() {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <></>;
 }
 
-export default withAuth(Home);
+export default Home;

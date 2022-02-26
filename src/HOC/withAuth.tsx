@@ -2,6 +2,7 @@ import { NextComponentType } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
+//TODO: 알맞게 고쳐보기
 function withAuth<T>(WrappedComponent: NextComponentType<T>) {
   const Auth = (pageProps: T) => {
     const router = useRouter();

@@ -1,6 +1,5 @@
-import { useRouter } from 'next/router';
 import { useMutation } from 'react-query';
-import { signin } from '@/api/auth';
+import { logout, signin } from '@/api/auth';
 
 //emotion
 import styled from '@emotion/styled';
@@ -10,6 +9,10 @@ import { SigninRequest } from '@/shared/types';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+
+//recoil
+import { useRecoilState } from 'recoil';
+import { userState } from '@/store/user';
 
 interface IForminputs {
   email: string;
@@ -22,7 +25,7 @@ const schema = yup.object().shape({
 });
 
 export default function LoginPage() {
-  const router = useRouter();
+  const [userValue, setUserValue] = useRecoilState(userState);
   const {
     register,
     handleSubmit,
@@ -35,8 +38,9 @@ export default function LoginPage() {
     'signin',
     (data: SigninRequest) => signin(data),
     {
-      onSuccess: () => {
-        return router.push('/');
+      onSuccess: data => {
+        setUserValue({ access_token: data.access_token, isLoggedIn: true });
+        return;
       },
     },
   );
@@ -45,19 +49,38 @@ export default function LoginPage() {
   };
   return (
     <Wrapper>
+      <div>{userValue.access_token}</div>
+      <br />
+      <div>{userValue.isLoggedIn ? '로그인 상태' : '로그아웃 상태'}</div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>EAMIL</div>
-        <input {...register('email')} />
+        <Input {...register('email')} />
         <p>{errors.email?.message}</p>
         <div>PASSWORD</div>
-        <input {...register('password')} />
+        <Input {...register('password')} />
         <p>{errors.password?.message}</p>
-        <button type="submit">
+        <Button type="submit">
           {mutation.isLoading ? 'Loading...' : 'Submit'}
-        </button>
+        </Button>
       </form>
+      <br />
+      <Button onClick={() => logout()}>로그아웃</Button>
     </Wrapper>
   );
 }
 
-const Wrapper = styled('div')``;
+const Wrapper = styled('div')`
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Input = styled('input')`
+  border: 1px solid black;
+`;
+
+const Button = styled('button')`
+  border: 1px solid black;
+`;
